@@ -46,9 +46,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/****************** End of reset.css *******************/
 
-/* FONTS */
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap'); */
+
 
 /* VARS */
 :root {
@@ -57,13 +57,19 @@ table {
 }
 
 
+
+div {
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
-    padding: 100px 50px;
+    padding-top: 20px;
+    
+    /* padding: 100px 50px; */
     background-color: white;
     font-family: 'Roboto Slab';
 }
@@ -78,40 +84,77 @@ body {
     margin: 0px 10px;
 }
 
+.title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
 .tile {
-    margin: 5px 0px;
     padding: 5px;
     
-    border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 14px -12px black;
     text-align: center;
     vertical-align: bottom;
 }
 
 .category {
-    height: 50px;
+    height: 60px;
     background-color: var(--main-blue);
     color: white;
     font-size: 24px;
+    margin-bottom: 15px;
 }
 
-.topic {
-    height: 100px;
-    background-color: white;
-    padding: 15px 5px 5px 5px;
-    cursor: pointer;
+.topics-box {
+    display: flex;
+    flex-direction: column;
 }
-.topic:hover {
+
+.topic-outer {
+    perspective: 1000px;
+    height: 120px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.flipped .topic-inner {
+    transform: rotateY(180deg);
+    cursor: default;
+}
+
+.topic-inner {
+    transition: .7s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.side {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 120px;
+    width: 100%;
+}
+.front {
+    z-index: 2;
+    transform: rotateY(0deg);
+    
     background-color: var(--accent-yellow);
     filter: saturate(.5) brightness(1.25);
 }
-
-.clicked {
-    background-color: lightgray;
-    color: slategray;
-    cursor: default;
+.front:hover {
+    filter: saturate(.7) brightness(1.1);
 }
-.clicked:hover {
-    background-color: lightgray;
-    filter: none;
+
+.back {
+    transform: rotateY(180deg);
+
+    background-color: rgb(236, 236, 236);
+}
+.back .title {
+    color: dimgray;
+    font-weight: lighter;
 }

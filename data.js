@@ -56,13 +56,16 @@ const DATA = {
         }
     ],
     flipsides: [
-        "gift card",
-        "Where did you grow up?",
-        "What is your name?",
-        "How old are you?",
-        "gift card",
-        "Why are you here?",
-        "Do you know Pete from the woodshop?",
-        "Did you know Kathy is the greatest ever?"
+        "Gift Card",
+        "Gift Card",
+        "What's your favorite flavor of ice cream?",
+        "What's your favorite flavor of ice cream?",
+        "What's your favorite flavor of ice cream?",
+        "What was the first concert you attended?",
+        "What was the first concert you attended?",
+        "What was the first concert you attended?",
+        "What state were you born in?",
+        "What state were you born in?",
+        "What state were you born in?"
     ]
 }

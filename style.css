@@ -53,6 +53,7 @@ table {
 /* VARS */
 :root {
     --main-blue: #007faa;
+    --dark-blue: #0b3746;
     --accent-yellow: #FFDC0B;
 }
 
@@ -153,6 +154,8 @@ body {
     transform: rotateY(180deg);
 
     background-color: rgb(236, 236, 236);
+    color: var(--main-blue);
+    font-weight: bold;
 }
 .back .title {
     color: dimgray;
